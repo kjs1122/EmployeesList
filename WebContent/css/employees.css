@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+#wrap {
+	width: 1000px;
+	margin: 0 auto;
+	text-align: center;
+}
+#title {
+	color: purple;
+}
+.insert {
+	display: block;
+	text-align: right;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+a:hover {
+	text-decoration: underline;
+}
+table {
+	width: 100%;
+	line-height: 2;
+	border-collapse: collapse;
+}
+th, td {
+	border: 1px solid #d3d3d3;
+}
+th {
+	background: purple;
+	width: 150px;
+}
