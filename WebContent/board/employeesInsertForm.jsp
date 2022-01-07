@@ -10,8 +10,8 @@
 <body>
 <div id="wrap">
 <h1 id="title">정보 등록</h1>
-	<form action="EmployeesServlet" method="post" name="frm">
-	<input type="hidden" name="command" value="employees_insert">
+	<form action="EmployeesFileServlet" method="post" name="frm" enctype="multipart/form-data">
+	<input type="hidden" name="command" value="employees_insert"> 
 	<table>
 		<tr><th>아이디</th><td align="left"><input type="text" name="id"></td></tr>
 		<tr><th>비밀번호</th><td align="left"><input type="password" name="pass"></td></tr>
@@ -31,6 +31,8 @@
 		</select>
 		</td></tr>
 		<tr><th>전화번호</th><td align="left"><input type="text" name="phone"></td></tr>
+		<tr><th>사진</th><td align="left"><input type="file" name="picture"></td></tr>
+		
 			
 	</table>
 	<input type="submit" value="확인" onclick="return check()">

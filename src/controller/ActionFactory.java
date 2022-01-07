@@ -4,6 +4,7 @@ import controller.action.Action;
 import controller.action.CheckPassAction;
 import controller.action.CheckPassActionForm;
 import controller.action.EmployeesDeleteAction;
+import controller.action.EmployeesFileDownLoadAction;
 import controller.action.EmployeesInsertAction;
 import controller.action.EmployeesInsertActionForm;
 import controller.action.EmployeesListAction;
@@ -51,6 +52,9 @@ public class ActionFactory {
 		}
 		if(command.equals("employees_delete")) {
 			action = new EmployeesDeleteAction();
+		}
+		if(command.equals("file_download")) {
+			action = new EmployeesFileDownLoadAction();
 		}
 		
 		return action;

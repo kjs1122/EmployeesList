@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.jasper.tagplugins.jstl.core.Out;
 
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+
 import controller.action.Action;
 
 /**

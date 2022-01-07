@@ -42,6 +42,8 @@ public class EmployeesDAO {
 				eVo.setGender(rs.getString("gender"));
 				eVo.setName(rs.getString("name"));
 				eVo.setPhone(rs.getString("phone"));
+				eVo.setPicture(rs.getString("picture"));
+				eVo.setFilename(rs.getString("filename"));
 				list.add(eVo);
 			}
 		} catch (Exception e) {
@@ -74,6 +76,8 @@ public class EmployeesDAO {
 				eVo.setGender(rs.getString("gender"));
 				eVo.setName(rs.getString("name"));
 				eVo.setPhone(rs.getString("phone"));
+				eVo.setPicture(rs.getString("picture"));
+				eVo.setFilename(rs.getString("filename"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -86,8 +90,8 @@ public class EmployeesDAO {
 	public void insertEmployees(EmployeesVO eVo) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		String sql = "insert into employees(id,pass,name,lev,gender,phone) "
-				+ "values(?,?,?,?,?,?)";
+		String sql = "insert into employees(id,pass,name,lev,gender,phone,picture,filename) "
+				+ "values(?,?,?,?,?,?,?,?)";
 		
 		try {
 			conn = DBManager.getConnection();
@@ -98,6 +102,9 @@ public class EmployeesDAO {
 			pstmt.setString(4, eVo.getLev());
 			pstmt.setString(5, eVo.getGender());
 			pstmt.setString(6, eVo.getPhone());
+			pstmt.setString(7, eVo.getPicture());
+			pstmt.setString(8, eVo.getFilename());
+			
 			pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -109,7 +116,7 @@ public class EmployeesDAO {
 	public void updateEmployees(EmployeesVO eVo) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		String sql = "update employees set pass=?, name=?, lev=?, gender=?, phone=? where id=?";
+		String sql = "update employees set pass=?, name=?, lev=?, gender=?, phone=?, picture=? , filename=? where id=?";
 		
 		try {
 			conn = DBManager.getConnection();
@@ -119,7 +126,9 @@ public class EmployeesDAO {
 			pstmt.setString(3, eVo.getLev());
 			pstmt.setString(4, eVo.getGender());
 			pstmt.setString(5, eVo.getPhone());
-			pstmt.setString(6, eVo.getId());
+			pstmt.setString(6, eVo.getPicture());
+			pstmt.setString(7, eVo.getFilename());
+			pstmt.setString(8, eVo.getId());
 			pstmt.executeUpdate();
 			
 		} catch (Exception e) {

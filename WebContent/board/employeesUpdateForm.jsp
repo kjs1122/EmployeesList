@@ -11,8 +11,13 @@
 <body>
 <div id="wrap">
 <h1 id="title">정보 수정</h1>
-	<form method="post" action="EmployeesServlet" name="frm">
+	<form method="post" action="EmployeesFileServlet" name="frm" enctype="multipart/form-data">
 	<input type="hidden" name="command" value="employees_update">
+	<table>
+	<tr>
+	<td id="imgBox">
+		<img alt="$#" src="upload/${employees.picture}">
+	<td>
 	<table>
 			<tr><th>아이디</th><td align="left">&nbsp;<input type="text" name="id" value="${employees.id}" readonly="readonly"></td></tr>
 			<tr><th>비밀번호</th><td align="left">&nbsp;<input type="password" name="pass" value="${employees.pass}"></td></tr>
@@ -32,6 +37,11 @@
 			</select>
 			</td></tr>
 			<tr><th>전화번호</th><td align="left">&nbsp;<input type="text" name="phone" value="${employees.phone}"></td></tr>
+			<tr><th>사진</th><td align="left">&nbsp;<input type="file" name="picture"></td></tr>
+			<tr><td colspan="2" style="font-size: 12px">주의 : 변경사항 없을시 건들지마시오</td></tr>
+	</table>
+	</td>
+	</tr>
 	</table>
 	<input type="submit" value="확인" onclick="return check()">
 	<input type="reset" value="취소">

@@ -13,4 +13,6 @@ public class EmployeesVO {
 	private String enter;
 	private String gender;
 	private String phone;
+	private String picture;
+	private String filename;
 }

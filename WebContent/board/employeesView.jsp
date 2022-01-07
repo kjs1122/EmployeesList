@@ -13,7 +13,11 @@
 <div id="wrap">
 <h1 id="title">정보 보기</h1>
 	<table>
-		
+	<tr>
+	<td id="imgBox">
+		<a href="EmployeesServlet?command=file_download&filename=${employees.filename}"><img alt="$#" src="upload/${employees.picture}"></a>
+	<td>
+	<table>
 			<tr><th>아이디</th><td align="left">&nbsp;${employees.id}</td></tr>
 			<tr><th>비밀번호</th><td align="left">&nbsp;${employees.pass}</td></tr>
 			<tr><th>이름</th><td align="left">&nbsp;${employees.name}</td></tr>
@@ -22,10 +26,14 @@
 			<tr><th>전화번호</th><td align="left">&nbsp;${employees.phone}</td></tr>
 			<tr><th>가입일</th><td align="left">&nbsp;${employees.enter}</td></tr>
 	</table>
+	</td>
+	</tr>
+	</table>
 	<input type="button" value="수정" onclick="winOpen('EmployeesServlet?command=check_pass_form&id=${employees.id}','update')">
 	<input type="button" value="삭제" onclick="winOpen('EmployeesServlet?command=check_pass_form&id=${employees.id}','delete')">
 	<input type="button" value="목록" onclick="location.href='EmployeesServlet?command=employees_list'">
 	<input type="button" value="등록" onclick="location.href='EmployeesServlet?command=employees_insert_form'">
+	
 </div>
 </body>
 </html>
