@@ -31,7 +31,7 @@ public class EmployeesFileDownLoadAction implements Action{
 		
 		int numRead;
 		
-		while((numRead = fin.read()) != -1) {
+		while((numRead = fin.read(buffer, 0, buffer.length)) != -1) {
 			fout.write(buffer,0,numRead);
 		}
 		
